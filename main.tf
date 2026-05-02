@@ -8,13 +8,7 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket         = "homelab-terraform-state"
-    key            = "infra/terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-    dynamodb_table = "homelab-terraform-locks"
-  }
+  backend "local" {}
 }
 
 provider "aws" {
